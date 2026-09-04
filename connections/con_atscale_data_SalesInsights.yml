@@ -1,0 +1,6 @@
+unique_name: con_atscale_data_SalesInsights
+object_type: connection
+label: con_atscale_data_SalesInsights
+as_connection: PostgresDB
+database: atscale_data
+schema: SalesInsights

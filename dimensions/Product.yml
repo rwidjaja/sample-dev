@@ -1,0 +1,41 @@
+unique_name: Product
+object_type: dimension
+label: Product
+hierarchies:
+  - unique_name: Product Hierarchy
+    label: Product Hierarchy
+    levels:
+      - unique_name: Product Level
+        secondary_attributes:
+          - unique_name: Product Line
+            label: Product Line
+            contains_unique_names: false
+            dataset: dimproduct
+            is_unique_key: false
+            key_columns:
+              - productline
+            name_column: productline
+level_attributes:
+  - unique_name: Product Level
+    label: Product Level
+    contains_unique_names: false
+    dataset: dimproduct
+    is_unique_key: true
+    key_columns:
+      - productkey
+    name_column: englishproductname
+relationships:
+  - unique_name: >-
+      dimproduct_productsubcategorykey_to_Product Sub Category_Product Sub
+      Category Level
+    from:
+      dataset: dimproduct
+      hierarchy: Product Hierarchy
+      join_columns:
+        - productsubcategorykey
+      level: Product Level
+    to:
+      dimension: Product Sub Category
+      level: Product Sub Category Level
+    type: embedded
+type: standard

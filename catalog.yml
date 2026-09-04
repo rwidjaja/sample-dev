@@ -1,0 +1,6 @@
+version: 1
+unique_name: sample-dev
+object_type: catalog
+label: sample-dev
+aggressive_agg_promotion: false
+build_speculative_aggs: true

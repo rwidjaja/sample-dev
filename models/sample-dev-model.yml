@@ -1,0 +1,44 @@
+unique_name: sample-dev-model
+object_type: model
+label: sample-dev
+dimensions:
+  - Sales_Reasons
+  - Product_Key
+  - Product_Info
+  - Customer_Key
+  - Order_Date
+  - Currency_Key
+metrics:
+  - unique_name: Order_Quantity_sum
+  - unique_name: Unit_Price_sum
+  - unique_name: Sales_Amount_sum
+  - unique_name: Tax_Amount_sum
+  - unique_name: m_factinternetsalesorig_unitprice_sum
+  - unique_name: m_factinternetsalesorig_discountamount_sum
+relationships:
+  - unique_name: factinternetsalesorig_productkey_to_Product_Product Level
+    from:
+      dataset: factinternetsalesorig
+      join_columns:
+        - productkey
+    to:
+      dimension: Product
+      level: Product Level
+  - unique_name: factinternetsalesorig_orderdatekey_to_Date_datecustom_dimension Level
+    from:
+      dataset: factinternetsalesorig
+      join_columns:
+        - orderdatekey
+    role_play: Order {0}
+    to:
+      dimension: Date
+      level: datecustom_dimension Level
+  - unique_name: factinternetsalesorig_shipdatekey_to_Date_datecustom_dimension Level
+    from:
+      dataset: factinternetsalesorig
+      join_columns:
+        - shipdatekey
+    role_play: Ship {0}
+    to:
+      dimension: Date
+      level: datecustom_dimension Level

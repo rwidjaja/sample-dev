@@ -1,0 +1,6 @@
+unique_name: Sales_Order_Line_Number_sum
+object_type: metric
+label: Sales_Order_Line_Number_sum
+calculation_method: sum
+column: salesorderlinenumber
+dataset: factinternetsales

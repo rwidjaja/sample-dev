@@ -1,0 +1,6 @@
+unique_name: m_factinternetsalesorig_discountamount_sum
+object_type: metric
+label: Discount Amount
+calculation_method: sum
+column: discountamount
+dataset: factinternetsalesorig
